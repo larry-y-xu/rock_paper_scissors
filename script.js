@@ -1,5 +1,4 @@
-let choice = "ROCK";
-console.log(playRound(choice, getComputerChoice()));
+game();
 
 function getComputerChoice() {
     integerChoice = Math.floor(Math.random() * 3) + 1;
@@ -18,7 +17,7 @@ function playRound(playerSelection, computerSelection) {
     playerSelection = playerSelection.toLowerCase();
     if (playerSelection === "rock") {
         if (computerSelection === "rock") {
-            return "Tie";
+            return "A tie";
         }
         else if (computerSelection === "paper") {
             return "You lose";
@@ -32,7 +31,7 @@ function playRound(playerSelection, computerSelection) {
             return "You win";
         }
         else if (computerSelection === "paper") {
-            return "Tie";
+            return "A tie";
         }
         else {
             return "You lose";
@@ -46,11 +45,19 @@ function playRound(playerSelection, computerSelection) {
             return "You win";
         }
         else {
-            return "Tie";
+            return "A tie";
         }
     }
     else {
         return "not a valid round";
+    }
+}
+
+function game() {
+    for (let i=1; i<6; i++) {
+        playerInput = prompt("Enter your decision, either rock, paper, or scissors");
+        result = playRound(playerInput, getComputerChoice());
+        console.log("the result for round " + i + " is " + result);
     }
 }
 
