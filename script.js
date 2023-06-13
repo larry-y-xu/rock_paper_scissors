@@ -17,47 +17,49 @@ function playRound(playerSelection, computerSelection) {
     playerSelection = playerSelection.toLowerCase();
     if (playerSelection === "rock") {
         if (computerSelection === "rock") {
-            return "A tie";
+            console.log("the result for the round is: tie");
         }
         else if (computerSelection === "paper") {
-            return "You lose";
+            console.log("the result for the round is: you lose");
         }
         else {
-            return "You win";
+            console.log("the result for the round is: you win");
         }
     }
     else if (playerSelection === "paper") {
         if (computerSelection === "rock") {
-            return "You win";
+            console.log("the result for the round is: you win");
         }
         else if (computerSelection === "paper") {
-            return "A tie";
+            console.log("the result for the round is: tie");
         }
         else {
-            return "You lose";
+            console.log("the result for the round is: you lose");
         }
     }
     else if (playerSelection === "scissors") {
         if (computerSelection === "rock") {
-            return "You lose";
+            console.log("the result for the round is: you lose");
         }
         else if (computerSelection === "paper") {
-            return "You win";
+            console.log("the result for the round is: you win");
         }
         else {
-            return "A tie";
+            console.log("the result for the round is: tie");
         }
     }
     else {
-        return "not a valid round";
+        console.log("the result for the round is: not a valid round");
     }
 }
 
 function game() {
-    for (let i=1; i<6; i++) {
-        playerInput = prompt("Enter your decision, either rock, paper, or scissors");
-        result = playRound(playerInput, getComputerChoice());
-        console.log("the result for round " + i + " is " + result);
-    }
+    let computerChoice = getComputerChoice()
+    const rockButton = document.getElementById("rock");
+    const paperButton = document.getElementById("paper");
+    const scissorButton = document.getElementById("scissors");
+    rockButton.addEventListener(("click"), () => {playRound("rock", computerChoice)})
+    paperButton.addEventListener(("click"), () => {playRound("paper", computerChoice)})
+    scissorButton.addEventListener(("click"), () => {playRound("scissors", computerChoice)})
 }
 
