@@ -17,39 +17,39 @@ function playRound(playerSelection, computerSelection) {
     playerSelection = playerSelection.toLowerCase();
     if (playerSelection === "rock") {
         if (computerSelection === "rock") {
-            console.log("the result for the round is: tie");
+            output.textContent = "the result for the round is: tie\n";
         }
         else if (computerSelection === "paper") {
-            console.log("the result for the round is: you lose");
+            output.textContent = "the result for the round is: you lose\n";
         }
         else {
-            console.log("the result for the round is: you win");
+            output.textContent = "the result for the round is: you win\n";
         }
     }
     else if (playerSelection === "paper") {
         if (computerSelection === "rock") {
-            console.log("the result for the round is: you win");
+            output.textContent = "the result for the round is: you win\n";
         }
         else if (computerSelection === "paper") {
-            console.log("the result for the round is: tie");
+            output.textContent = "the result for the round is: tie\n";
         }
         else {
-            console.log("the result for the round is: you lose");
+            output.textContent = "the result for the round is: you lose\n";
         }
     }
     else if (playerSelection === "scissors") {
         if (computerSelection === "rock") {
-            console.log("the result for the round is: you lose");
+            output.textContent = "the result for the round is: you lose\n";
         }
         else if (computerSelection === "paper") {
-            console.log("the result for the round is: you win");
+            output.textContent = "the result for the round is: you win\n";
         }
         else {
-            console.log("the result for the round is: tie");
+            output.textContent = "the result for the round is: tie\n";
         }
     }
     else {
-        console.log("the result for the round is: not a valid round");
+        output.textContent = "the result for the round is: not a valid round\n";
     }
 }
 
@@ -58,6 +58,7 @@ function game() {
     const rockButton = document.getElementById("rock");
     const paperButton = document.getElementById("paper");
     const scissorButton = document.getElementById("scissors");
+    const output = document.getElementById("output");
     rockButton.addEventListener(("click"), () => {playRound("rock", computerChoice)})
     paperButton.addEventListener(("click"), () => {playRound("paper", computerChoice)})
     scissorButton.addEventListener(("click"), () => {playRound("scissors", computerChoice)})
